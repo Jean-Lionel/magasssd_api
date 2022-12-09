@@ -17,3 +17,5 @@ yarn-error.log
 /.idea
 /.vscode
 /.phpintel
+draft.yaml
+draft_old.yaml

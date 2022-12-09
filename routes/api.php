@@ -25,3 +25,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('product', App\Http\Controllers\ProductController::class);
 
 Route::apiResource('lot', App\Http\Controllers\LotController::class);
+
+
+Route::apiResource('type', App\Http\Controllers\TypeController::class);
+
+Route::apiResource('stock', App\Http\Controllers\StockController::class);
+
+Route::apiResource('address', App\Http\Controllers\AddressController::class);
+
+Route::apiResource('type-client', App\Http\Controllers\TypeClientController::class);
+
+Route::apiResource('reception', App\Http\Controllers\ReceptionController::class);
+
+Route::apiResource('detail-reception', App\Http\Controllers\DetailReceptionController::class);

@@ -1,28 +1,82 @@
 models:
-  Product:
-    name: string:255
-    unite_mesure: float
-    caisse: float
-    nombre_bouteille: float
+  Type:
+    name: string:50
+    description: nullable longText
     user_id: id foreign:users
-    softDeletes
+    SoftDeletes
 
-  Lot:
-    name: string:255
-    product_id: id foreign:products
-    quantity: double default:0
-    price_unitaire: double default:0
-    price_vente: double default:0
-    date_created: nullable timestamp
-    description: longtext
-    softDeletes
-    relationships:
-      hasMany: Product
+  Stock:
+    name: string:100
+    date: nullable date
+    description: nullable longText
+    type_id: id foreign:Type
+    user_id: id foreign:users
+    SoftDeletes
 
-seeders: Product, Lot
+  Address:
+    name: string:100
+    pays: nullable string:50
+    province: nullable string:50
+    commune: nullable string:50
+    zone: nullable string:50
+    colline: nullable string:50
+    user_id: id nullable foreign:users
+    SoftDeletes
+
+  TypeClient:
+    name: string:50
+    description: nullable longText
+    user_id: id nullable foreign:users
+    SoftDeletes
+
+  Client:
+    address_id: id foreign:addresses
+    type_client_id: id foreign:type_clients
+    nom: nullable string:50
+    prenom: nullable string:50
+    description: nullable longText
+    telephone: nullable string:50
+    nif: nullable string:50
+    assujet_tva: nullable string:50
+    user_id: id nullable foreign:users
+    SoftDeletes
+
+  Reception:
+    montant: double
+    montant_total: double
+    tva: nullable double
+    description: nullable longText
+    user_id: id nullable foreign:users
+    stock_id: id nullable foreign:stocks
+    SoftDeletes
+
+  DetailReception:
+    lot_id : id foreign:lots
+    user_id: id nullable foreign:users
+    product_id : id foreign:products
+    quantity: double
+    prix_unitaire : double
+    reception_id : id foreign:receptions
+    SoftDeletes
+    
+
+seeders: Type, Stock, Address, TypeClient, Reception, DetailReception
 
 controllers:
-  Product:
+  Type:
     resource: api
-  Lot:
+
+  Stock:
+    resource: api
+
+  Address:
+    resource: api  
+
+  TypeClient:
+    resource: api
+
+  Reception:
+    resource: api
+    
+  DetailReception:
     resource: api

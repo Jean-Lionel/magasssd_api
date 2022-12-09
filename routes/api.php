@@ -20,3 +20,8 @@ Route::post('login', [RegisterController::class, 'login']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::apiResource('product', App\Http\Controllers\ProductController::class);
+
+Route::apiResource('lot', App\Http\Controllers\LotController::class);

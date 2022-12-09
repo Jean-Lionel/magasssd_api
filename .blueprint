@@ -1,0 +1,26 @@
+created:
+    - app/Http/Controllers/ProductController.php
+    - app/Http/Controllers/LotController.php
+    - database/factories/ProductFactory.php
+    - database/factories/LotFactory.php
+    - database/migrations/2022_12_09_034010_create_products_table.php
+    - database/migrations/2022_12_09_034011_create_lots_table.php
+    - app/Models/Product.php
+    - app/Models/Lot.php
+    - database/seeders/ProductSeeder.php
+    - database/seeders/LotSeeder.php
+    - tests/Feature/Http/Controllers/ProductControllerTest.php
+    - tests/Feature/Http/Controllers/LotControllerTest.php
+    - app/Http/Requests/ProductStoreRequest.php
+    - app/Http/Requests/ProductUpdateRequest.php
+    - app/Http/Requests/LotStoreRequest.php
+    - app/Http/Requests/LotUpdateRequest.php
+    - app/Http/Resources/ProductCollection.php
+    - app/Http/Resources/ProductResource.php
+    - app/Http/Resources/LotCollection.php
+    - app/Http/Resources/LotResource.php
+updated:
+    - routes/api.php
+models:
+    Product: { name: 'string:255', unite_mesure: 'string:255', caisse: 'nullable string:255', nombre_bouteille: float, user_id: 'id foreign:users', softdeletes: softDeletes }
+    Lot: { name: 'string:255', product_id: 'id foreign:products', quantity: 'double default:0', price_unitaire: 'double default:0', price_vente: 'double default:0', date_created: 'nullable timestamp', description: longtext, softdeletes: softDeletes, relationships: { hasMany: Product } }

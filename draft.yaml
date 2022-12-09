@@ -1,8 +1,8 @@
 models:
   Product:
     name: string:255
-    unite_mesure: string:255
-    caisse: nullable string:255
+    unite_mesure: float
+    caisse: float
     nombre_bouteille: float
     user_id: id foreign:users
     softDeletes

@@ -31,7 +31,7 @@ class ReceptionFactory extends Factory
             'description' => $this->faker->text,
             'user_id' => User::factory(),
             'stock_id' => Stock::factory(),
-            'softdeletes' => $this->faker->word,
+           
         ];
     }
 }

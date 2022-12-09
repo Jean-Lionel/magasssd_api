@@ -33,7 +33,7 @@ class DetailReceptionFactory extends Factory
             'quantity' => $this->faker->randomFloat(0, 0, 9999999999.),
             'prix_unitaire' => $this->faker->randomFloat(0, 0, 9999999999.),
             'reception_id' => Reception::factory(),
-            'softdeletes' => $this->faker->word,
+
         ];
     }
 }

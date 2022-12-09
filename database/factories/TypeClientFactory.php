@@ -27,7 +27,7 @@ class TypeClientFactory extends Factory
             'name' => $this->faker->name,
             'description' => $this->faker->text,
             'user_id' => User::factory(),
-            'softdeletes' => $this->faker->word,
+            
         ];
     }
 }

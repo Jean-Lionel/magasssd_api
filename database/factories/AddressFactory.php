@@ -31,7 +31,7 @@ class AddressFactory extends Factory
             'zone' => $this->faker->regexify('[A-Za-z0-9]{50}'),
             'colline' => $this->faker->regexify('[A-Za-z0-9]{50}'),
             'user_id' => User::factory(),
-            'softdeletes' => $this->faker->word,
+            
         ];
     }
 }

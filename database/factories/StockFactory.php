@@ -30,7 +30,7 @@ class StockFactory extends Factory
             'description' => $this->faker->text,
             'type_id' => Type::factory(),
             'user_id' => User::factory(),
-            'softdeletes' => $this->faker->word,
+           
         ];
     }
 }

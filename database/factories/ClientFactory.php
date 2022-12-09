@@ -35,7 +35,7 @@ class ClientFactory extends Factory
             'nif' => $this->faker->regexify('[A-Za-z0-9]{50}'),
             'assujet_tva' => $this->faker->regexify('[A-Za-z0-9]{50}'),
             'user_id' => User::factory(),
-            'softdeletes' => $this->faker->word,
+           
         ];
     }
 }

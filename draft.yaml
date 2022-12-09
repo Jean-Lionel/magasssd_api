@@ -1,0 +1,28 @@
+models:
+  Product:
+    name: string:255
+    unite_mesure: string:255
+    caisse: nullable string:255
+    nombre_bouteille: float
+    user_id: id foreign:users
+    softDeletes
+
+  Lot:
+    name: string:255
+    product_id: id foreign:products
+    quantity: double default:0
+    price_unitaire: double default:0
+    price_vente: double default:0
+    date_created: nullable timestamp
+    description: longtext
+    softDeletes
+    relationships:
+      hasMany: Product
+
+seeders: Product, Lot
+
+controllers:
+  Product:
+    resource: api
+  Lot:
+    resource: api

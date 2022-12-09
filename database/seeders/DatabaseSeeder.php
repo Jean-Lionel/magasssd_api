@@ -17,6 +17,12 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(1)->create();
         Lot::factory()->count(5)->create();
-        Product::factory()->count(100)->create();
+        Product::factory()->count(50)->create();
+         Address::factory()->count(5)->create();
+          DetailReception::factory()->count(5)->create();
+          Reception::factory()->count(5)->create();
+          Stock::factory()->count(5)->create();
+           TypeClient::factory()->count(5)->create();
+           Type::factory()->count(5)->create();
     }
 }
